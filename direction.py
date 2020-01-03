@@ -13,46 +13,40 @@ def getDirection(LatA,LongA,LatB,LongB):
     Long = LongB - LongA
     X = math.cos(LatB) * math.sin(Long)
     Y = (math.cos(LatA) * math.sin(LatB))-(math.sin(LatA)* math.cos(LatB) * math.cos(Long))
-    # print("LatA: ",LatA)
-    # print("LongA: ",LongA)
-    # print("LatB: ",LatB)
-    # print("LongB: ",LongB)
-    # print("x: ",X)
-    # print("y: ",Y)
     Be =math.degrees(math.atan2(X,Y))
-    # print('Bearing Angle : ',Be)
+    #Be = Bearer angle
     if Be == 0 :
-        return("North")
+        return 'North'
     elif 0 < Be < 45:
-        return("NorthNorthEast")
+        return 'NorthNorthEast'
     elif Be == 45:
-        return("NorthEast")
+        return 'NorthEast'
     elif 45 < Be < 90:
-        return("NorthEastEast")
+        return 'NorthEastEast'
     elif Be == 90:
-        return("East")
+        return 'East'
     elif 90 < Be < 135:
-        return("SouthEastEast") 
+        return 'SouthEastEast' 
     elif Be == 135:
-        return("SouthEast") 
+        return 'SouthEast' 
     elif 135 < Be < 180:
-        return("SouthSouthEast")  
+        return 'SouthSouthEast'  
     elif Be == 180:
-        return("South")
+        return 'South'
     elif -135 > Be > -180:
-        return("SouthSouthWest")
+        return 'SouthSouthWest'
     elif Be == -135:
-        return("SouthWest")
+        return 'SouthWest'
     elif -90 > Be > -135:
-        return("SouthWestWest")   
+        return 'SouthWestWest'   
     elif Be == -90:
-        return("West")
+        return 'West'
     elif 0 > Be > -45:
-        return("NorthNorthWest")
+        return 'NorthNorthWest'
     elif Be == -45:
-        return("NorthWest")  
+        return 'NorthWest'  
     elif -45 > Be > -90:
-        return("NorthWestWest") 
+        return 'NorthWestWest' 
     else:
         return 'Not a valid location' 
 
